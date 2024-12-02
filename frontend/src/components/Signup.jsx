@@ -18,7 +18,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `${import.meta.env.VITE_RENDER_ID}/auth/register`
+      const url = `https://fulltoss-assign.onrender.com/auth/register`
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

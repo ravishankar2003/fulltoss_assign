@@ -23,7 +23,7 @@ const Dashboard = () => {
     const fetchCurrentUser = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch(`${import.meta.env.VITE_RENDER_ID}/auth/details`, {
+        const res = await fetch(`https://fulltoss-assign.onrender.com/auth/details`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const Dashboard = () => {
     const fetchProducts = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch(`${import.meta.env.VITE_RENDER_ID}/user/getproducts`, {
+        const res = await fetch(`https://fulltoss-assign.onrender.com/user/getproducts`, {
           headers: { Authorization: `Bearer ${token}` },
           credentials: 'include',
         });
@@ -58,7 +58,7 @@ const Dashboard = () => {
     const fetchCart = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch(`${import.meta.env.VITE_RENDER_ID}/user/getcart`, {
+        const res = await fetch(`https://fulltoss-assign.onrender.com/user/getcart`, {
           headers: { Authorization: `Bearer ${token}` },
           credentials: 'include',
         });
@@ -78,7 +78,7 @@ const Dashboard = () => {
     try {
       const product = products.find((p) => p.id === productId);
       const token = localStorage.getItem('fulltossaccesstoken');
-      const res = await fetch(`${import.meta.env.VITE_RENDER_ID}/user/addtocart`, {
+      const res = await fetch(`https://fulltoss-assign.onrender.com/user/addtocart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const Dashboard = () => {
     try {
       const product = cart.find((p) => p.id === productId);
       const token = localStorage.getItem('fulltossaccesstoken');
-      const res = await fetch(`${import.meta.env.VITE_RENDER_ID}/user/deletefromcart`, {
+      const res = await fetch(`https://fulltoss-assign.onrender.com/user/deletefromcart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

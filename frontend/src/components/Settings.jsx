@@ -23,7 +23,7 @@ const Settings = ({ setCurrentUser, currentuser, isSett }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `${import.meta.env.VITE_RENDER_ID}/auth/update`; // Replace with your actual API endpoint
+      const url = `https://fulltoss-assign.onrender.com/auth/update`; // Replace with your actual API endpoint
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
