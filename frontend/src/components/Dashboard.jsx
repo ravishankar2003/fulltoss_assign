@@ -23,7 +23,7 @@ const Dashboard = () => {
     const fetchCurrentUser = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch('http://localhost:3000/auth/details', {
+        const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/auth/details`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const Dashboard = () => {
     const fetchProducts = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch('http://localhost:3000/user/getproducts', {
+        const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/user/getproducts`, {
           headers: { Authorization: `Bearer ${token}` },
           credentials: 'include',
         });
@@ -58,7 +58,7 @@ const Dashboard = () => {
     const fetchCart = async () => {
       try {
         const token = localStorage.getItem('fulltossaccesstoken');
-        const res = await fetch('http://localhost:3000/user/getcart', {
+        const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/user/getcart`, {
           headers: { Authorization: `Bearer ${token}` },
           credentials: 'include',
         });
@@ -78,7 +78,7 @@ const Dashboard = () => {
     try {
       const product = products.find((p) => p.id === productId);
       const token = localStorage.getItem('fulltossaccesstoken');
-      const res = await fetch('http://localhost:3000/user/addtocart', {
+      const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/user/addtocart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const Dashboard = () => {
     try {
       const product = cart.find((p) => p.id === productId);
       const token = localStorage.getItem('fulltossaccesstoken');
-      const res = await fetch('http://localhost:3000/user/deletefromcart', {
+      const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_BASE_URL}/user/deletefromcart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

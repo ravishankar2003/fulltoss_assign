@@ -18,7 +18,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:3000/auth/register`
+      const url = `${import.meta.env.VITE_REACT_APP_API_BASE_URL}/auth/register`
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

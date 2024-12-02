@@ -23,7 +23,7 @@ const Settings = ({ setCurrentUser, currentuser, isSett }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:3000/auth/update`; // Replace with your actual API endpoint
+      const url = `${import.meta.env.VITE_REACT_APP_API_BASE_URL}/auth/update`; // Replace with your actual API endpoint
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
